@@ -7,8 +7,8 @@ The small microphones enters one's ears, and goes to a box where the user can co
 
 While recording the sound, the user can save into a file timestamps generated when a button is pressed. In this way the user can take note when some strange tinitus sound appears by just pressing a button, and review later these along the recorded file.
 
-The system uses fat filesystem, it records fat clusters sequentially and just writes the fat for the file when records ends. The sound is recorded as stereo with a 12-bit amplitude due to the Raspberry Pi Pico ADC limits. From main menu user can put the ultrasonic speaker sweeping frequencies with the dial. 
-
+The system uses fat filesystem, and for performance reasons, it records fat clusters sequentially and writes the fat once the records ends, so the SDCard shall only have files created by this system. The sound is recorded as stereo with a 12-bit amplitude due to the Raspberry Pi Pico ADC limits. From main menu user can put the ultrasonic speaker playing, sweeping frequencies with the dial. 
+ 
 
 
 
