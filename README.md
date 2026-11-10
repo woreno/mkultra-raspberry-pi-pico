@@ -1,4 +1,4 @@
-'# mkultra-raspberry-pi-pico
+# mkultra-raspberry-pi-pico
 A stereo audio recorder and ultrasound player using Raspberry Pi Pico
 
 I have severe titinus in my ears, sometimes suddenly i feel my ears popping. For fun i decided to make a device record my ears. So this consists of a SD Card reader, a small display, a set of buttons, a dial (rotary encoder), two small electrec microphones, a op-amp circuit for amplification, a Raspberry Pi Pico to record the sound. After i added a ultrasonic speaker to sweep frequencies. 
