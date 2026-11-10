@@ -5,7 +5,7 @@ I have severe titinus in my ears, sometimes suddenly i feel my ears popping. For
 
 The small microphones enters one's ears, and goes to a box where the user can control the recording.
 
-While recording the sound, the user can save a into a file timestamps generated when a button is pressed. In this way the user can take note when some strange tinitus sound appears by just pressing a button, and review later these along the recorded file.
+While recording the sound, the user can save into a file timestamps generated when a button is pressed. In this way the user can take note when some strange tinitus sound appears by just pressing a button, and review later these along the recorded file.
 
 The system uses fat filesystem, it records fat clusters sequentially and just writes the fat for the file when records ends. The sound is recorded as stereo with a 12-bit amplitude due to the Raspberry Pi Pico ADC limits. From main menu user can put the ultrasonic speaker sweeping frequencies with the dial. 
 
