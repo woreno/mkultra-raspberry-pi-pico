@@ -1,5 +1,0 @@
-(sym_lib_table
-  (lib (name appleii)(type Legacy)(uri E:/Hardware/appleii/appleii/appleii.lib)(options "")(descr ""))
-  (lib (name MCU_RaspberryPi_and_Boards)(type Legacy)(uri E:/Hardware/KICAD/simbolos/MCU_RaspberryPi_and_Boards.lib)(options "")(descr ""))
-  (lib (name ESP8266)(type Legacy)(uri E:/Hardware/KICAD/kicad-ESP8266-master/ESP8266.lib)(options "")(descr ""))
-)

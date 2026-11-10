@@ -1,9 +1,0 @@
-(module indicador (layer F.Cu) (tedit 6019DA00)
-  (fp_text reference REF** (at 0 -2.54) (layer F.SilkS) hide
-    (effects (font (size 1 1) (thickness 0.15)))
-  )
-  (fp_text value indicador (at 0 -5.08) (layer F.Fab) hide
-    (effects (font (size 1 1) (thickness 0.15)))
-  )
-  (fp_poly (pts (xy 2.54 0) (xy -2.54 1.27) (xy 0 0) (xy -2.54 -1.27)) (layer F.Cu) (width 0.3))
-)
