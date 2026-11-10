@@ -1,0 +1,49 @@
+cmake_minimum_required(VERSION 3.12)
+
+add_definitions(-w)
+
+# Import Pico SDK
+include(pico_sdk_import.cmake)
+
+# diz que o projeto vai usar C/C++/ASM
+project(PROJECT C CXX ASM)
+
+# diz quais os standards de C/C++ aceites
+#set(CMAKE_C_STANDARD 11)
+#set(CMAKE_CXX_STANDARD 17)
+
+# inicializa o SDK do PICO
+pico_sdk_init()
+
+
+# isto é BUILD TARGET, pelo vai produzir MAIN.ELF, MAIN.BIN, MAIN.HEX...
+add_executable(PROJECT main.cpp)
+
+# target_sources(PROJECT PUBLIC
+#         ${CMAKE_CURRENT_LIST_DIR}/main.c
+#         ${CMAKE_CURRENT_LIST_DIR}/hid_app.c
+#         ${CMAKE_CURRENT_LIST_DIR}/msc_app.c
+#         ${CMAKE_CURRENT_LIST_DIR}/cdc_app.c
+#         )
+# 
+
+# faz os outros ficheiros ELF e UF2, etc
+pico_add_extra_outputs(PROJECT)
+
+target_compile_options(PROJECT PRIVATE  -fno-strict-aliasing)
+target_compile_options(PROJECT PRIVATE  -Wwrite-strings)
+target_compile_options(PROJECT PRIVATE  --signed-char)
+target_compile_options(PROJECT PRIVATE -Wno-narrowing) 
+#target_compile_options(PROJECT PRIVATE -O2) 
+#target_compile_options(PROJECT PRIVATE -O0)
+
+# 0/1: ativa/desativa o output para stdio (ex. printf)		 
+pico_enable_stdio_usb(PROJECT 1)
+pico_enable_stdio_uart(PROJECT 0)
+
+target_include_directories(PROJECT PUBLIC ${CMAKE_CURRENT_LIST_DIR})
+
+
+target_link_libraries(PROJECT PUBLIC  pico_stdio pico_stdlib  hardware_adc hardware_exception hardware_pwm  pico_multicore hardware_uart hardware_rtc hardware_adc hardware_dma hardware_timer hardware_exception)
+
+

@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClInclude Include="app_config.h">
+      <Filter>_HEADERS_</Filter>
+    </ClInclude>
+    <ClInclude Include="app_strings.h">
+      <Filter>_HEADERS_</Filter>
+    </ClInclude>
+    <ClInclude Include="esp_config.h">
+      <Filter>_COMPILE</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Development\velociraptor\include\mcu\charmap.h">
+      <Filter>%2a%2a%2a MISC HEADERS %2a%2a%2a</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Development\velociraptor\include\mcu\crc7.h">
+      <Filter>%2a%2a%2a MISC HEADERS %2a%2a%2a</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Development\velociraptor\include\mcu\crc16.h">
+      <Filter>%2a%2a%2a MISC HEADERS %2a%2a%2a</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Development\velociraptor\include\mcu\draw.h">
+      <Filter>%2a%2a%2a MISC HEADERS %2a%2a%2a</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Development\velociraptor\include\mcu\esp.h">
+      <Filter>%2a%2a%2a MISC HEADERS %2a%2a%2a</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Development\velociraptor\include\mcu\fatHeads.h">
+      <Filter>%2a%2a%2a MISC HEADERS %2a%2a%2a</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Development\velociraptor\include\mcu\fs.h">
+      <Filter>%2a%2a%2a MISC HEADERS %2a%2a%2a</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Development\velociraptor\include\mcu\mcu.h">
+      <Filter>%2a%2a%2a MISC HEADERS %2a%2a%2a</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Development\velociraptor\include\mcu\mcu_util.h">
+      <Filter>%2a%2a%2a MISC HEADERS %2a%2a%2a</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Development\velociraptor\include\mcu\rasp_pico.h">
+      <Filter>%2a%2a%2a MISC HEADERS %2a%2a%2a</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Development\velociraptor\include\mcu\sd.h">
+      <Filter>%2a%2a%2a MISC HEADERS %2a%2a%2a</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Development\velociraptor\include\mcu\sd_debug.h">
+      <Filter>%2a%2a%2a MISC HEADERS %2a%2a%2a</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Development\velociraptor\include\mcu\shapes.h">
+      <Filter>%2a%2a%2a MISC HEADERS %2a%2a%2a</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Development\velociraptor\include\mcu\st7735.h">
+      <Filter>%2a%2a%2a MISC HEADERS %2a%2a%2a</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Development\velociraptor\include\mcu\rasp_pico\audioplayer.h">
+      <Filter>audio</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Development\velociraptor\include\mcu\rasp_pico\audiorec.h">
+      <Filter>audio</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Development\velociraptor\include\mcu\rasp_pico\audio.h">
+      <Filter>audio</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Development\velociraptor\include\mcu\sound.h">
+      <Filter>audio</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\raspberry_hid\esp_config.h">
+      <Filter>_HEADERS_</Filter>
+    </ClInclude>
+    <ClInclude Include="ui.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="tests.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="uiIcons.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="app_notes.h">
+      <Filter>app</Filter>
+    </ClInclude>
+    <ClInclude Include="app_ultraspk.h">
+      <Filter>app</Filter>
+    </ClInclude>
+    <ClInclude Include="app_miclevels.h">
+      <Filter>app</Filter>
+    </ClInclude>
+    <ClInclude Include="app_formatssd.h">
+      <Filter>app</Filter>
+    </ClInclude>
+    <ClInclude Include="app_main.h">
+      <Filter>_HEADERS_</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Development\velociraptor\include\mcu\uiHeads.h">
+      <Filter>%2a%2a%2a MISC HEADERS %2a%2a%2a</Filter>
+    </ClInclude>
+    <ClInclude Include="uiIconsData.hpp">
+      <Filter>headers</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="draft.cpp">
+      <Filter>_HEADERS_</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="compile.bat">
+      <Filter>_COMPILE</Filter>
+    </None>
+    <None Include="test.bat">
+      <Filter>_COMPILE</Filter>
+    </None>
+    <None Include="pico_sdk_import.cmake">
+      <Filter>_COMPILE</Filter>
+    </None>
+    <None Include="list.bat">
+      <Filter>_COMPILE</Filter>
+    </None>
+    <None Include="icons.txt">
+      <Filter>_HEADERS_</Filter>
+    </None>
+    <None Include="CMAKELISTS.txt">
+      <Filter>_COMPILE</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="audio">
+      <UniqueIdentifier>{f92192db-f199-4e96-a84c-c22e64f43a43}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="_HEADERS_">
+      <UniqueIdentifier>{d1042636-71ba-4c0b-b4d1-54e7e0feabbe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="_COMPILE">
+      <UniqueIdentifier>{5cae2245-ec51-4d0c-b75b-e61d17035fec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="headers">
+      <UniqueIdentifier>{c08d496d-cbfd-44e9-b52b-dd7d5ad47182}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="app">
+      <UniqueIdentifier>{46a6ccf2-7745-4160-9db0-b4976225fb9b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="%2a%2a%2a MISC HEADERS %2a%2a%2a">
+      <UniqueIdentifier>{538dc8e4-f58d-4120-ba5e-b64c7e75b2bd}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
