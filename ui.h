@@ -2,7 +2,7 @@
 #include "uiHeads.h"
 
 volatile UI_BUTTONS ui_newAction = UI_BUTTON_NONE;
-UI_SIMPLE_PAGE	  *uiPageOptions; 
+UI_SIMPLE_PAGE	  *uiPageMain; 
 UI_SIMPLE_PAGE	  *uiPageRecord; 
 Ret				  uiProgressBar;
 
@@ -83,86 +83,53 @@ W0 ui_fatal(W8 module_, W8 error_)
  
 W0  ui_menu_init()
 {
-	 W8 cnt_audio_record = 1;
-	 W8 cnt_sd = 1;
-	 W8 cnt_wifi = 
-		#ifdef APP_USES_WIFI 
-		 1;
-		#else 
-		 0;
-		#endif
-	 W8 cnt_ultrawaves =
-		#ifdef APP_USES_ULTRAWAVES 
-		 1;
-		#else 
-		 0;
-		#endif
 
 	uiButton           = UI_BUTTON_NONE;
-	uiPageOptions      = new UI_SIMPLE_PAGE();
-	if (!uiPageOptions) fatal(UI, UI_ERROR_ALLOC);
+	uiPageMain        = new UI_SIMPLE_PAGE();
+	if (!uiPageMain) fatal(UI, UI_ERROR_ALLOC);
 
 	uiPageRecord	   = new UI_SIMPLE_PAGE();
 	if (!uiPageRecord) fatal(UI, UI_ERROR_ALLOC);
 
 	UI_ITEM_VALUE* itemValue;
 	UI_SIMPLE_PAGE* page;
-	W8 menu_items_number;
 
 	//////////////////////////////////////////////////////
-	page = uiPageOptions;
+	page = uiPageMain;
 	
-	menu_items_number = 
-				cnt_audio_record +
-				cnt_sd +
-				cnt_ultrawaves*3 + 
-				cnt_wifi ;
 
-	page->init((SW8*)ui_strs_menu, menu_items_number); 
+	page->init((SW8*)ui_strs_menu, 5); 
 		
 			page->addItem(ui_strs_recordmics,	   (UI_PAGE*)uiPageRecord);
 			page->addItem(ui_strs_formatDisk,	   format_disk);
-			page->addItem(ui_strs_playultrasnd,    play_ultra_soundfile);
+			//page->addItem(ui_strs_playultrasnd,    play_ultra_soundfile);
 			page->addItem(ui_strs_playultrawave,   new UI_ITEM_VALUE(UI_ITEM_VALUE_BOOL, &(config.ultraWaveOn)));
-			itemValue = new UI_ITEM_VALUE(UI_ITEM_VALUE_FLT32_RANGE_ENUM, &(config.ultraFreq));
-			itemValue->FP32range.start =  ULTRA_FREQ_BEGIN;
-					itemValue->FP32range.delta =  ULTRA_FREQ_DELTA;
-					itemValue->FP32range.end   =  ULTRA_FREQ_END;
-					itemValue->sufixStr = (ULTRA_FREQ_UNIT==1)?ui_strs_hz:ui_strs_khz;
+				itemValue = new UI_ITEM_VALUE(UI_ITEM_VALUE_FLT32_RANGE_ENUM, &(config.ultraFreq));
+				itemValue->FP32range.start =  ULTRA_FREQ_BEGIN;
+						itemValue->FP32range.delta =  ULTRA_FREQ_DELTA;
+						itemValue->FP32range.end   =  ULTRA_FREQ_END;
+						itemValue->sufixStr = (ULTRA_FREQ_UNIT==1)?ui_strs_hz:ui_strs_khz;
 			page->addItem(ui_strs_freq, itemValue);
-
-		#ifdef APP_USES_WIFI
 			page->addItem(ui_strs_reconnect, connect);
-		#endif
 	
 	//////////////////////////////////////////////////////
 	page = uiPageRecord;
-	menu_items_number
 
-			= cnt_audio_record *3 + 
-			  cnt_wifi * 1  + 
-			  cnt_audio_record * 2;
-
-
-		page->init((SW8*)ui_strs_record, menu_items_number, uiPageOptions);
+	page->init((SW8*)ui_strs_record, 5, uiPageMain);
 
 			page->addItem(ui_strs_record,     record_to_file);
 			page->addItem(ui_strs_stereo,     new UI_ITEM_VALUE( &(config.recStereo)) );
 			page->addItem(ui_strs_bits,       new UI_ITEM_VALUE( &(config.recSampleBitsId), sampleBitsArr, 0, 1));
-			#ifdef APP_USES_WIFI
-				page->addItem(ui_strs_txrecords,  new UI_ITEM_VALUE( &(config.txRecords)));
-			#endif
-		
+			//	page->addItem(ui_strs_txrecords,  new UI_ITEM_VALUE( &(config.txRecords)));
 			page->addItem(ui_strs_debugnotes, new UI_ITEM_VALUE( &(config.debugNotes)));
 			page->addItem(ui_strs_miclevels,  mic_levels);
 
-	uiCurrPage	= uiPageOptions;
+	uiCurrPage	= uiPageMain;
 	ui_menu_draw();
 	ui_install_buttons();
 }
 W0  ui_menu_draw()
 {
-	draw_initBuffer();
 	uiCurrPage->draw();
 	DRAW_UPDATE
 }

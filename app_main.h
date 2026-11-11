@@ -79,22 +79,25 @@ W1  checkIfFS()
 	ui_display_alert(ui_strs_notmounted, ui_strs_sd);
 	return 1;
 }
-
-#ifdef APP_USES_WIFI
+ 
 	W1  checkIfConnected()
 	{
-		if (config.connectedToServer) return 0;
-		ui_display_alert(ui_strs_notconnected, ui_strs_server);
-		return 1;
-	}
-
-	#include "esp.h"  
-	#define AUDIOREC_USES_ESP
-
-	W0  connect(W0* args_=0)
-	{
-		config.connectedToServer = false;
 		#ifdef APP_USES_WIFI
+			if (config.connectedToServer) return 0;
+			ui_display_alert(ui_strs_notconnected, ui_strs_server);
+			return 1;
+		#endif
+	}
+	
+	#ifdef APP_USES_WIFI
+		#include "esp.h"  
+		#define AUDIOREC_USES_ESP
+	#endif
+
+	W0  connect(W0* args_)
+	{
+		#ifdef APP_USES_WIFI
+			config.connectedToServer = false;
 			if (tryFunction(ui_strs_esp, esp_init, 5)) return;
 			if (tryFunction(ui_strs_wifi, esp_wifi_connect, ESP_WIFI_RECONNECT_TRIES)) return;
 
@@ -105,11 +108,10 @@ W1  checkIfFS()
 			ui_display_str((SW8*)SERVER_PORT, SERVER_IP);
 			config.connectedToServer = true;
 			esp_clearRx();
-		return;
+			return;
 		#endif
 	}
-#endif
-
+ 
 #include "rasp_pico/audiorec.h" 
 #include "rasp_pico/audioplayer.h" 
 
@@ -132,46 +134,5 @@ W0  init_pins()
 	PIN_MODE(PIN_BUZZER,		 PIN_MODE_OUTPUT)
 } 
 
-typedef  W8 (*TRY_FUNCTION)(W0);
-W1  tryFunction(const SW8* str_, TRY_FUNCTION func_ , W8 numberTries_)
-{
-	W8 status;
-	W8 i=1;
-	do
-	{
-		if (i==1)
-		{
-			ui_display_str(str_, ui_strs_start);
-		}else
-		{
-			sprintf(mcuSharedBuffer, "%s? [%i] try:%i",str_, status, i);
-			ui_display_str(mcuSharedBuffer, ui_strs_start);
-		}
-		status = func_(); 
-		if (status==RES_OK) return 0;
-		DELAY_MS(1000);
-		i++;
-	}
-	while(i<numberTries_);
-	return 1;
-}
 
-W1  fs_mount()
-{
-	config.fsInitialized = false;
-	W8 status;
-	if (tryFunction(ui_strs_sd, sd_init, 5)==0)
-	{
-		if (tryFunction(ui_strs_fs, fs_init, 5)==0)
-		{
-			config.fsInitialized = true;
-			return 0;
-		}
-	}
-	//FSNode pathNode;
-	//fs_getRootDirNode(&pathNode);
-	//printf("\nrtdir:");
-	//fs_iterateDir(&pathNode, fs_itfx_prnEntry, 0);
-	return 1;
-}
 

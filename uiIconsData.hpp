@@ -9,7 +9,7 @@
 #define iconData_EXTRA_ROWS  0 // rows
 #define iconData_COLS_TOTAL_BYTESZ  32 // bytes
 #define iconData_ROWS_TOTAL 22 // bytes
-const W8 iconData[] VL_STORE_FLASH_GROUP(ICONDATA) VL_ALIGN(4) =  {
+const W8 iconData[] VL_STORE_FLASH_GROUP("ICONDATA") VL_ALIGN(4) =  {
 //ROW 0 / 21 
 
  0xCC, 0xCC, 0xCC, 0xCC, 0xCC, 0xCC, 0xCC, 0xCC, 0xCC, 0xCC, 0xCC, 0x7C, 0x77, 0xC7, 0xCC, 0xCC, 
