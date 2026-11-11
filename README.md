@@ -7,7 +7,7 @@ The small electrec microphones (cushioned) enters one's ears, and goes to microp
 
 While recording, the user can save into a file timestamps generated when a button is pressed. In this way the user can take note when some strange tinitus sound appears by just pressing a button, and review later these timestamps along the recorded file.
 
-The system uses fat filesystem, Pico DMA's ADC channels, two cores, and for performance reasons, it records fat clusters sequentially and writes the fat once the records ends, so the SDCard shall only have files created by this system. The sound is recorded stereo with a 12-bit amplitude quantization due to the Raspberry Pi Pico ADC limits, and the rate (samples per second) can be selected from the user interface. From the main menu user can put the ultrasonic speaker playing, sweeping frequencies with the dial (in this setup i used a cheap ultrasonic speaker (2.5€), capable of 36KHz so just a bit above the human ear limit, 20 kHz). 
+The system uses fat filesystem, Pico DMA's ADC channels, two cores, and for performance reasons, it records fat clusters sequentially and writes the fat once the records ends, so the SDCard shall only have files created by this system. The sound is recorded stereo with a 12-bit amplitude quantization due to the Raspberry Pi Pico ADC limits, and the rate (samples per second) can be selected from the user interface. From the main menu user can put the ultrasonic speaker playing, sweeping frequencies with the dial (in this setup i used a cheap ultrasonic speaker (2.5€), capable of 36KHz so just a bit above the human ear limit, 20 kHz. 
  
 
 
