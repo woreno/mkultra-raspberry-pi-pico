@@ -10,10 +10,8 @@ While recording, the user can save into a file timestamps generated when a butto
 The system uses fat filesystem, Pico DMA's ADC channels, two cores, and for performance reasons, it records fat clusters sequentially and writes the fat once the records ends, so the SDCard shall only have files created by this system. The sound is recorded stereo with a 12-bit amplitude quantization due to the Raspberry Pi Pico ADC limits, and the rate (samples per second) can be selected from the user interface. From the main menu user can put the ultrasonic speaker playing, sweeping frequencies with the dial (in this setup i used a cheap ultrasonic speaker (2.5€), capable of 36KHz so just a bit above the human ear limit, 20 kHz. 
 
 **About the results**
-There is a constant beat probably coming from heart neats, Attached theres a recording **test.wav**, after noise  reduction, equalizer that feels very ghostly!  
+There was a constant beat probably coming from heart beats, the recording **test.wav**, after noise reduction, and equalizer, feels very ghostly. 
  
-
-
 
 
 
